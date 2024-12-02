@@ -1,0 +1,40 @@
+<div style="font-family: MainFont; color: white; white-space: pre-wrap;">
+    <p>
+        @startuml
+        package "User Interface" as ui {
+        [TitleScreen] as ts
+        [MapScreen] as ms
+        [SettingsScreen] as ss
+        [GameOverScreen] as go
+        }
+        package "Persistent Objects" as po {
+        [Soundtrack] as st
+        [GamePreferences] as gp
+        [Constants] as cs
+        [InGameTimer] as it
+        }
+        package "Buildings" as bd {
+        [BuildingManager] as bm
+        [BuildingRenderer] as br
+        [BuildingFactory] as bf
+        [BuildingPlacementManager] as bp
+        }
+        interface "Preferences profile" as pp
+        interface "Soundtrack file" as sf    
+        ui ..> gp : get preferences
+        ss ..> gp : set preferences
+        st ..> gp : get volume
+        gp --> pp : load/store
+        ui ..> st : play
+        go ..> st : pause
+        ms ..> it : update time
+        ui ..> cs : get constants
+        ms ..> bm : choose buildings
+        ms ..> br : render buildings
+        st --> sf : stream
+        bm ..> bp : place buildings
+        bm ..> bf : create buildings
+        br ..> bp : get placed buildings
+        @enduml
+    </p>
+</div>

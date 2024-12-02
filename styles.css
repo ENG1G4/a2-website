@@ -92,9 +92,7 @@ header .NavBar {
   justify-content: space-between;
   padding: 0 5vw;
   transition: 0.5s ease-in-out;
-
 }
-
 
 a {
   text-decoration: none;
@@ -104,8 +102,6 @@ a {
 .NavBarList {
   position: relative;
 }
-
-
 
 .NavBar li {
   float: left;
@@ -153,9 +149,7 @@ a {
   transition: 0.5s;
   text-shadow: 0 3px 20px rgba(4, 4, 4, 0.603);
   color: white;
-
 }
-
 
 .LogoNavBar {
   font-size: 1.5rem;
@@ -218,10 +212,7 @@ h2 {
   left: 0;
   z-index: -1;
   filter: brightness(40%);
-  
-
 }
-
 
 .main-section {
   padding: 2%
