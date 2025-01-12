@@ -230,4 +230,19 @@ img:not(.backgroundImage) {
 .documentation {
   border: 3px dashed white;
   text-align: center;
+  height: 120px;
+}
+
+.split {
+  width: 50%;
+  position: absolute;
+  overflow-x: hidden;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
 }
