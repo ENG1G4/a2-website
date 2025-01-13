@@ -1,0 +1,88 @@
+<div style="font-family: MainFont; color: white; white-space: pre-wrap;">
+  <p>
+@startuml
+'https://plantuml.com/component-diagram
+
+
+package "achievements" {
+  [Achievement]
+  [AchievementFactory]
+  [AchievementManager]
+}
+package "building" {
+  package "Factory"{
+    [BuildingFactory]
+    [BuildingSpriteFactory]
+  }
+  [BuildingManager]
+  [BuildingPlacementManager]
+}
+package "currency" {
+  [Currency]
+}
+package "event" {
+  [EventManager]
+  [GameEvent]
+}
+package "render" {
+  [BuildingRenderer]
+}
+package "satisfaction" {
+  package "leaderboard"{
+    [Leaderboard]
+  }
+  [SatisfactionGraph]
+  [SatisfactionManager]
+}
+package "screen" {
+  [GameOverScreen]
+  [MapScreen]
+  [SettingsScreen]
+  [TitleScreen]
+}
+package "setting"{
+  [Constants]
+  [GamePreferences]
+}
+package "timer"{
+  [TimerManager]
+}
+[GameInputProcessor]
+[GameStateManager]
+[Soundtrack]
+interface soundtrackfile
+interface textureatlas
+
+screen ..> [GamePreferences] : get Preferences
+screen ..> [Constants] : get constants
+timer ..> [Constants] : get constants
+currency ..> [Constants] : get constants
+event ..> [Constants] : get constants
+[SettingsScreen] ..> [GamePreferences] : get Preferences
+screen ..> [Soundtrack] : play
+[Soundtrack] ..> [GamePreferences] : get volume
+[GameOverScreen] ..> [Soundtrack] : pause
+[Soundtrack] --> soundtrackfile :  stream
+[MapScreen] ..> [GameInputProcessor] : start
+[MapScreen] ..> [GameStateManager] : start
+[MapScreen] ..> [BuildingRenderer] : render buildings
+[MapScreen] ..> [EventManager] : start
+[MapScreen] ..> textureatlas : get UI skins
+[BuildingSpriteFactory] ..> textureatlas : get building textures
+[EventManager] ..> [TimerManager] : start events
+[EventManager] ..> [AchievementManager]
+[GameStateManager] ..> [TimerManager] : start game timer
+[MapScreen] ..> [SatisfactionManager] : start
+[SatisfactionManager] ..> [SatisfactionGraph] : build score graph
+[Leaderboard] ..> [SatisfactionManager] : show end score
+[GameInputProcessor] ..> [BuildingManager] : choose building
+[BuildingManager] ..> [BuildingPlacementManager] : place building
+[BuildingPlacementManager] ..> [BuildingFactory] : get new building
+[BuildingPlacementManager] ..> [BuildingSpriteFactory] : get new sprite
+[BuildingPlacementManager] ..> [Currency] : check funds
+
+
+@enduml
+
+  </p>
+</div>

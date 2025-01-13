@@ -1,0 +1,111 @@
+<div style="font-family: MainFont; color: white; white-space: pre-wrap;">
+    <p>
+@startuml
+!pragma teoz true
+actor User
+participant Main
+participant TitleScreen
+participant MapScreen
+participant SettingsScreen
+participant GameOverScreen
+participant BuildingManager
+participant BuildingPlacementManager
+participant EventManager
+participant Currency
+participant SatisfactionManager
+participant AchievementManager
+participant TimerManager
+participant GamePreferences
+participant Soundtrack
+participant Leaderboard
+User -> Main: start game
+activate Main
+activate Soundtrack
+activate GamePreferences
+Main -> Soundtrack : play()
+Soundtrack <-> GamePreferences : getMusicVolume()
+Soundtrack -> User : play soundtrack
+Main -> TitleScreen : new TitleScreen()
+activate TitleScreen
+TitleScreen -> User : show()
+User -> TitleScreen : Play
+activate MapScreen
+& TitleScreen -> MapScreen : new MapScreen()
+& MapScreen -> TimerManager : new TimerManager()
+activate TimerManager
+MapScreen -> BuildingManager : new BuildingManager()
+activate BuildingManager
+MapScreen -> BuildingPlacementManager : new BuildingPlacementManager()
+activate BuildingPlacementManager
+MapScreen -> EventManager : new EventManager()
+activate EventManager
+MapScreen -> Currency : new Currency()
+activate Currency
+MapScreen -> SatisfactionManager : new SatisfactionManager()
+activate SatisfactionManager
+MapScreen -> AchievementManager : new AchievementManager()
+activate AchievementManager
+deactivate TitleScreen
+MapScreen -> User : show()
+User -> MapScreen : choose building
+& MapScreen -> BuildingManager : tryPlaceBuilding()
+BuildingManager -> User : location choice mode
+User -> BuildingManager : choose location
+& BuildingManager -> BuildingPlacementManager : place building
+& BuildingPlacementManager -> Currency : deduct building cost
+BuildingPlacementManager -> SatisfactionManager : update satisfaction score
+BuildingManager -> User : start building animation
+Currency -> User : update currency
+User -> MapScreen : Pause
+& MapScreen -> TimerManager : stopAllTimers()
+MapScreen -> MapScreen : change Pause icon to Resume icon
+User -> MapScreen : Resume
+& MapScreen -> TimerManager : startAllTimers()
+MapScreen -> MapScreen : change Resume icon to Pause icon
+User -> MapScreen : Settings
+& MapScreen -> TimerManager :  stopAllTimers()
+MapScreen -> SettingsScreen : new SettingsScreen()
+activate SettingsScreen
+SettingsScreen -> User : show()
+User -> SettingsScreen : Change music volume
+& SettingsScreen -> GamePreferences : setMusicVolume()
+SettingsScreen -> Soundtrack: play()
+Soundtrack -> GamePreferences : getMusicVolume()
+Soundtrack -> User : play soundtrack with new volume
+User -> SettingsScreen : Back
+User -> TimerManager : startAllTimers()
+SettingsScreen -> MapScreen : setScreen(previousScreen)
+deactivate SettingsScreen
+AchievementManager -> EventManager : start achievement event
+EventManager -> TimerManager : start event
+EventManager -> User : display event feedback
+...3 minutes later...
+TimerManager -> MapScreen : time expired
+deactivate MapScreen
+TimerManager -> GameOverScreen : new GameOverScreen()
+activate GameOverScreen
+SatisfactionManager -> GameOverScreen : send satisfaction score
+deactivate BuildingManager
+deactivate BuildingPlacementManager
+deactivate Currency
+deactivate EventManager
+deactivate SatisfactionManager
+deactivate AchievementManager
+GameOverScreen -> Leaderboard : new Leaderboard()
+activate Leaderboard
+GameOverScreen -> Soundtrack : pause()
+Soundtrack -> User : pause soundtrack
+GameOverScreen -> User : show()
+User -> Leaderboard : enters name
+User -> GameOverScreen : Quit
+GameOverScreen -> Main : exit()
+deactivate TimerManager
+deactivate GamePreferences
+deactivate GameOverScreen
+deactivate Soundtrack
+deactivate Leaderboard
+Main -> User : close game
+deactivate Main
+@enduml
+    </p>
+</div>
