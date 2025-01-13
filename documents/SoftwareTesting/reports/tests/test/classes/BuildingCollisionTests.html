@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.535s</div>
+<div class="counter">0.999s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,32 +82,32 @@
 </thead>
 <tr>
 <td class="success">testBuildingCollision()</td>
-<td class="success">0.072s</td>
+<td class="success">0.176s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testBuildingManagerPlace()</td>
-<td class="success">0.049s</td>
+<td class="success">0.117s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testBuildingManagerRemove()</td>
-<td class="success">0.073s</td>
+<td class="success">0.115s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testBuildingManagerReset()</td>
-<td class="success">0.018s</td>
+<td class="success">0.050s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testOutOfBounds()</td>
-<td class="success">0.304s</td>
+<td class="success">0.504s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testTerrainCollision()</td>
-<td class="success">0.019s</td>
+<td class="success">0.037s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -136,8 +136,8 @@ Building SPORTS_CENTRE created &amp; timer registered
 Placed - x: 20 | y:30
 Callback set on: ACCOMMODATION
 Callback set on: SPORTS_CENTRE
-Running instantly. callback on: ACCOMMODATION callback: Mock for Runnable, hashCode: 876420389
-Running instantly. callback on: SPORTS_CENTRE callback: Mock for Runnable, hashCode: 876420389
+Running instantly. callback on: ACCOMMODATION callback: Mock for Runnable, hashCode: 1346009488
+Running instantly. callback on: SPORTS_CENTRE callback: Mock for Runnable, hashCode: 1346009488
 </pre>
 </span>
 </div>
@@ -145,6 +145,51 @@ Running instantly. callback on: SPORTS_CENTRE callback: Mock for Runnable, hashC
 <h2>Standard error</h2>
 <span class="code">
 <pre>Exception in thread &quot;HeadlessApplication&quot; java.lang.IllegalArgumentException: Error compiling shader: 
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.createDefaultShader(SpriteBatch.java:164)
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.&lt;init&gt;(SpriteBatch.java:127)
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.&lt;init&gt;(SpriteBatch.java:81)
+	at com.badlogic.gdx.scenes.scene2d.Stage.&lt;init&gt;(Stage.java:100)
+	at com.backlogged.univercity.screen.TitleScreen.&lt;init&gt;(TitleScreen.java:46)
+	at com.backlogged.univercity.Main.create(Main.java:22)
+	at com.badlogic.gdx.backends.headless.HeadlessApplication.mainLoop(HeadlessApplication.java:108)
+	at com.badlogic.gdx.backends.headless.HeadlessApplication$1.run(HeadlessApplication.java:93)
+Exception in thread &quot;HeadlessApplication&quot; java.lang.IllegalArgumentException: Error compiling shader: 
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.createDefaultShader(SpriteBatch.java:164)
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.&lt;init&gt;(SpriteBatch.java:127)
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.&lt;init&gt;(SpriteBatch.java:81)
+	at com.badlogic.gdx.scenes.scene2d.Stage.&lt;init&gt;(Stage.java:100)
+	at com.backlogged.univercity.screen.TitleScreen.&lt;init&gt;(TitleScreen.java:46)
+	at com.backlogged.univercity.Main.create(Main.java:22)
+	at com.badlogic.gdx.backends.headless.HeadlessApplication.mainLoop(HeadlessApplication.java:108)
+	at com.badlogic.gdx.backends.headless.HeadlessApplication$1.run(HeadlessApplication.java:93)
+Exception in thread &quot;HeadlessApplication&quot; java.lang.IllegalArgumentException: Error compiling shader: 
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.createDefaultShader(SpriteBatch.java:164)
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.&lt;init&gt;(SpriteBatch.java:127)
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.&lt;init&gt;(SpriteBatch.java:81)
+	at com.badlogic.gdx.scenes.scene2d.Stage.&lt;init&gt;(Stage.java:100)
+	at com.backlogged.univercity.screen.TitleScreen.&lt;init&gt;(TitleScreen.java:46)
+	at com.backlogged.univercity.Main.create(Main.java:22)
+	at com.badlogic.gdx.backends.headless.HeadlessApplication.mainLoop(HeadlessApplication.java:108)
+	at com.badlogic.gdx.backends.headless.HeadlessApplication$1.run(HeadlessApplication.java:93)
+Exception in thread &quot;HeadlessApplication&quot; java.lang.IllegalArgumentException: Error compiling shader: 
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.createDefaultShader(SpriteBatch.java:164)
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.&lt;init&gt;(SpriteBatch.java:127)
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.&lt;init&gt;(SpriteBatch.java:81)
+	at com.badlogic.gdx.scenes.scene2d.Stage.&lt;init&gt;(Stage.java:100)
+	at com.backlogged.univercity.screen.TitleScreen.&lt;init&gt;(TitleScreen.java:46)
+	at com.backlogged.univercity.Main.create(Main.java:22)
+	at com.badlogic.gdx.backends.headless.HeadlessApplication.mainLoop(HeadlessApplication.java:108)
+	at com.badlogic.gdx.backends.headless.HeadlessApplication$1.run(HeadlessApplication.java:93)
+Exception in thread &quot;HeadlessApplication&quot; java.lang.IllegalArgumentException: Error compiling shader: 
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.createDefaultShader(SpriteBatch.java:164)
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.&lt;init&gt;(SpriteBatch.java:127)
+	at com.badlogic.gdx.graphics.g2d.SpriteBatch.&lt;init&gt;(SpriteBatch.java:81)
+	at com.badlogic.gdx.scenes.scene2d.Stage.&lt;init&gt;(Stage.java:100)
+	at com.backlogged.univercity.screen.TitleScreen.&lt;init&gt;(TitleScreen.java:46)
+	at com.backlogged.univercity.Main.create(Main.java:22)
+	at com.badlogic.gdx.backends.headless.HeadlessApplication.mainLoop(HeadlessApplication.java:108)
+	at com.badlogic.gdx.backends.headless.HeadlessApplication$1.run(HeadlessApplication.java:93)
+Exception in thread &quot;HeadlessApplication&quot; java.lang.IllegalArgumentException: Error compiling shader: 
 	at com.badlogic.gdx.graphics.g2d.SpriteBatch.createDefaultShader(SpriteBatch.java:164)
 	at com.badlogic.gdx.graphics.g2d.SpriteBatch.&lt;init&gt;(SpriteBatch.java:127)
 	at com.badlogic.gdx.graphics.g2d.SpriteBatch.&lt;init&gt;(SpriteBatch.java:81)
@@ -209,7 +254,7 @@ Exception in thread &quot;HeadlessApplication&quot; java.lang.IllegalArgumentExc
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.10.2</a> at 13 Jan 2025, 00:49:56</p>
+<a href="http://www.gradle.org">Gradle 8.10.2</a> at Jan 13, 2025, 10:17:57 AM</p>
 </div>
 </div>
 </body>
